@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">sopt180407_2</string>
+    <string name="mine_post">게시물</string>
+    <string name="mine_follower">팔로워</string>
+    <string name="mine_following">팔로잉</string>
+    <string name="mine_user_name">이찬주</string>
 </resources>
