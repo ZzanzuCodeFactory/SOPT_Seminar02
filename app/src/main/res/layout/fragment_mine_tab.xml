@@ -197,47 +197,44 @@
         >
 
         <ImageView
+            android:id="@+id/ib_mine_all"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_weight="1"
-            android:src="@drawable/my_all_off"
+            android:src="@drawable/tab_my_all"
             />
 
         <ImageView
+            android:id="@+id/ib_mine_list"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_weight="1"
-            android:src="@drawable/my_align_off"
+            android:src="@drawable/tab_my_align"
             />
 
         <ImageView
+            android:id="@+id/ib_mine_tag"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_weight="1"
-            android:src="@drawable/my_tag_off"
+            android:src="@drawable/tab_my_tag"
             />
 
         <ImageView
+            android:id="@+id/ib_mine_news"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_weight="1"
-            android:src="@drawable/my_save_off"
+            android:src="@drawable/tab_news"
             />
 
     </LinearLayout>
 
-    <ImageView
+    <!--Fragment will be here-->
+    <FrameLayout
+        android:id="@+id/mine_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/pikapika"
         />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal">
-
-
-    </LinearLayout>
 
 </LinearLayout>

@@ -11,7 +11,17 @@ import android.view.ViewGroup
  */
 class MineTab : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.fragment_mine_tab, container, false)
-        return v
+        addFragment(MyAllFragment())
+
+        return inflater.inflate(R.layout.fragment_mine_tab, container, false)
+    }
+
+    fun addFragment(mFragment: Fragment) {
+        val fm = fragmentManager
+        val mTransaction = fm.beginTransaction()
+
+        mTransaction.add(R.id.mine_fragment, mFragment)
+        mTransaction.addToBackStack(null)
+        mTransaction.commit()
     }
 }
