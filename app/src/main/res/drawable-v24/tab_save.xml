@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--TODO: my_save_on 이미지 파일 구하기-->
+    <item
+        android:drawable="@drawable/my_save_off"
+        android:state_selected="true"/>
+    <item
+        android:drawable="@drawable/my_save_off"
+        android:state_selected="false"/>
+</selector>

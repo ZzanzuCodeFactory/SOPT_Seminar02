@@ -17,13 +17,13 @@ class MineTab : Fragment(), View.OnClickListener {
 
         addFragment(MyAllFragment())
 
-//        clearSelected()
+        clearSelected(inflater, container)
         v.ib_mine_all.isSelected = true
 
         v.ib_mine_all.setOnClickListener(this)
         v.ib_mine_list.setOnClickListener(this)
         v.ib_mine_tag.setOnClickListener(this)
-        v.ib_mine_news.setOnClickListener(this)
+        v.ib_mine_save.setOnClickListener(this)
 
         return v
     }
@@ -31,15 +31,23 @@ class MineTab : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v) {
             ib_mine_all -> {
+
+                ib_mine_all.isSelected = true
                 replaceFragment(MyAllFragment())
             }
             ib_mine_list -> {
+
+                ib_mine_list.isSelected = true
                 replaceFragment(MyListFragment())
             }
             ib_mine_tag -> {
+
+                ib_mine_tag.isSelected = true
                 replaceFragment(MyTagFragment())
             }
-            ib_mine_news -> {
+            ib_mine_save -> {
+
+                ib_mine_save.isSelected = true
                 replaceFragment(MyNewsFragment())
             }
         }
@@ -63,10 +71,12 @@ class MineTab : Fragment(), View.OnClickListener {
         mTransaction.commit()
     }
 
-//    fun clearSelected(){
-//        ib_mine_all.isSelected = false
-//        ib_mine_list.isSelected = false
-//        ib_mine_tag.isSelected = false
-//        ib_mine_news.isSelected = false
-//    }
+    fun clearSelected(inflater: LayoutInflater, container: ViewGroup?){
+        val v = inflater.inflate(R.layout.fragment_mine_tab, container, false)
+
+        v.ib_mine_all.isSelected = false
+        v.ib_mine_list.isSelected = false
+        v.ib_mine_tag.isSelected = false
+        v.ib_mine_save.isSelected = false
+    }
 }
