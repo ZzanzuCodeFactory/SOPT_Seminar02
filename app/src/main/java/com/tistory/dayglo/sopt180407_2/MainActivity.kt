@@ -6,9 +6,31 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_home_tab.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        addFragment(HomeTab()) // == addFragment(new HomeTab())
+
+        clearSelected()
+        btn_main_home.isSelected = true
+//        방법1
+//        btn_main_home.setOnClickListener {
+//            replaceFragment(HomeTab())
+//        }
+//
+//        btn_main_mine.setOnClickListener {
+//            replaceFragment(MineTab())
+//        }
+
+//        방법2
+        btn_main_home.setOnClickListener(this) // 이 액티비티에 정의된 onClick 메소드를 사용하겠다!
+        btn_main_mine.setOnClickListener(this)
+        btn_main_add.setOnClickListener(this)
+
+    }
 
     // 개쩐다!
     override fun onClick(v: View?) {
@@ -32,29 +54,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(mIntent)
             }
         }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        addFragment(HomeTab()) // == addFragment(new HomeTab())
-
-        clearSelected()
-        btn_main_home.isSelected = true
-//        방법1
-//        btn_main_home.setOnClickListener {
-//            replaceFragment(HomeTab())
-//        }
-//
-//        btn_main_mine.setOnClickListener {
-//            replaceFragment(MineTab())
-//        }
-
-//        방법2
-        btn_main_home.setOnClickListener(this) // 이 액티비티에 정의된 onClick 메소드를 사용하겠다!
-        btn_main_mine.setOnClickListener(this)
-        btn_main_add.setOnClickListener(this)
     }
 
     // 프래그먼트 적용
