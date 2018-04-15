@@ -17,8 +17,7 @@ class MineTab : Fragment(), View.OnClickListener {
 
         addFragment(MyAllFragment())
 
-        clearSelected(inflater, container)
-        v.ib_mine_all.isSelected = true
+//        clearSelected(inflater, container)
 
         v.ib_mine_all.setOnClickListener(this)
         v.ib_mine_list.setOnClickListener(this)
@@ -28,26 +27,38 @@ class MineTab : Fragment(), View.OnClickListener {
         return v
     }
 
-    override fun onClick(v: View?) {
+    override fun onClick(v: View) {
         when(v) {
             ib_mine_all -> {
+//                v?.ib_mine_all.isSelected = true
+//                v?.ib_mine_list.isSelected = false
+//                v?.ib_mine_tag.isSelected = false
+//                v?.ib_mine_save.isSelected = false
 
-                ib_mine_all.isSelected = true
                 replaceFragment(MyAllFragment())
             }
             ib_mine_list -> {
+//                v?.ib_mine_all.isSelected = false
+//                v?.ib_mine_list.isSelected = true
+//                v?.ib_mine_tag.isSelected = false
+//                v?.ib_mine_save.isSelected = false
 
-                ib_mine_list.isSelected = true
                 replaceFragment(MyListFragment())
             }
             ib_mine_tag -> {
+//                v?.ib_mine_all.isSelected = false
+//                v?.ib_mine_list.isSelected = false
+//                v?.ib_mine_tag.isSelected = true
+//                v?.ib_mine_save.isSelected = false
 
-                ib_mine_tag.isSelected = true
                 replaceFragment(MyTagFragment())
             }
             ib_mine_save -> {
+//                v?.ib_mine_all.isSelected = false
+//                v?.ib_mine_list.isSelected = false
+//                v?.ib_mine_tag.isSelected = false
+//                v?.ib_mine_save.isSelected = true
 
-                ib_mine_save.isSelected = true
                 replaceFragment(MyNewsFragment())
             }
         }
@@ -71,12 +82,13 @@ class MineTab : Fragment(), View.OnClickListener {
         mTransaction.commit()
     }
 
-    fun clearSelected(inflater: LayoutInflater, container: ViewGroup?){
-        val v = inflater.inflate(R.layout.fragment_mine_tab, container, false)
-
-        v.ib_mine_all.isSelected = false
-        v.ib_mine_list.isSelected = false
-        v.ib_mine_tag.isSelected = false
-        v.ib_mine_save.isSelected = false
-    }
+//    TODO 2018-04-16 / clearSelected 구현, v.~을 위한 inflater와 container는 필수일까? 다른 방법은 없을까? 실행을 위해서는 inflater와 container를 항상 받아야 하는건 아닐텐데...!
+//    fun clearSelected(inflater: LayoutInflater, container: ViewGroup?){
+//        val v = inflater.inflate(R.layout.fragment_mine_tab, container, false)
+//
+//        v.ib_mine_all.isSelected = false
+//        v.ib_mine_list.isSelected = false
+//        v.ib_mine_tag.isSelected = false
+//        v.ib_mine_save.isSelected = false
+//    }
 }
